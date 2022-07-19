@@ -120,11 +120,11 @@ namespace Projeto_Academia
                 //cálculo de vagas
 
                
-                tb_vagas.Text= calcVagas().ToString();
+                tb_vagas.Text= calculeVagas().ToString();
             }
         }
 
-        private string calcVagas()
+        private string calculeVagas()
         {
             string queryVagas = string.Format(@"
                       SELECT
@@ -189,7 +189,7 @@ namespace Projeto_Academia
                 {
                     dgv_turmas[1, linha].Value = tb_dscturma.Text;
                     dgv_turmas[2, linha].Value = cb_horario.Text;
-                    tb_vagas.Text = calcVagas();
+                    tb_vagas.Text = calculeVagas();
                 }
                 else
                 {
