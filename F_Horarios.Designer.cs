@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_fechar = new System.Windows.Forms.Button();
-            this.btn_excluir = new System.Windows.Forms.Button();
-            this.btn_salvar = new System.Windows.Forms.Button();
             this.btn_novo = new System.Windows.Forms.Button();
+            this.btn_salvar = new System.Windows.Forms.Button();
+            this.btn_excluir = new System.Windows.Forms.Button();
             this.lb_id = new System.Windows.Forms.Label();
             this.tb_idhorario = new System.Windows.Forms.TextBox();
             this.lb_horaio = new System.Windows.Forms.Label();
@@ -65,16 +65,15 @@
             this.btn_fechar.UseVisualStyleBackColor = true;
             this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
-            // btn_excluir
+            // btn_novo
             // 
-            this.btn_excluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_excluir.Location = new System.Drawing.Point(203, 4);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(94, 23);
-            this.btn_excluir.TabIndex = 2;
-            this.btn_excluir.Text = "Excluir Horário";
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            this.btn_novo.Location = new System.Drawing.Point(3, 4);
+            this.btn_novo.Name = "btn_novo";
+            this.btn_novo.Size = new System.Drawing.Size(94, 23);
+            this.btn_novo.TabIndex = 0;
+            this.btn_novo.Text = "Novo Horário";
+            this.btn_novo.UseVisualStyleBackColor = true;
+            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
             // 
             // btn_salvar
             // 
@@ -87,15 +86,16 @@
             this.btn_salvar.UseVisualStyleBackColor = true;
             this.btn_salvar.Click += new System.EventHandler(this.btn_salvar_Click);
             // 
-            // btn_novo
+            // btn_excluir
             // 
-            this.btn_novo.Location = new System.Drawing.Point(3, 4);
-            this.btn_novo.Name = "btn_novo";
-            this.btn_novo.Size = new System.Drawing.Size(94, 23);
-            this.btn_novo.TabIndex = 0;
-            this.btn_novo.Text = "Novo Horário";
-            this.btn_novo.UseVisualStyleBackColor = true;
-            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
+            this.btn_excluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_excluir.Location = new System.Drawing.Point(203, 4);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(94, 23);
+            this.btn_excluir.TabIndex = 2;
+            this.btn_excluir.Text = "Excluir Horário";
+            this.btn_excluir.UseVisualStyleBackColor = true;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // lb_id
             // 
@@ -129,14 +129,14 @@
             // 
             this.dgv_horario.AllowUserToAddRows = false;
             this.dgv_horario.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_horario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_horario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horario.EnableHeadersVisualStyles = false;
             this.dgv_horario.Location = new System.Drawing.Point(6, 56);
@@ -152,10 +152,10 @@
             // mtb_dscHorario
             // 
             this.mtb_dscHorario.Location = new System.Drawing.Point(74, 30);
-            this.mtb_dscHorario.Mask = "99:99\\até 99:99";
+            this.mtb_dscHorario.Mask = "99:99 \\até 99:99";
             this.mtb_dscHorario.Name = "mtb_dscHorario";
             this.mtb_dscHorario.Size = new System.Drawing.Size(100, 20);
-            this.mtb_dscHorario.TabIndex = 5;
+            this.mtb_dscHorario.TabIndex = 6;
             // 
             // F_Horarios
             // 

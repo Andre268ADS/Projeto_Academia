@@ -26,7 +26,8 @@ namespace Projeto_Academia
              FROM
                 tb_horarios
              ORDER BY
-                T_DSCHORARIOS
+                N_IDHORARIO , 
+                T_DSCHORARIO
             ";
 
             dgv_horario.DataSource = Banco.dql(vquery);
@@ -47,7 +48,7 @@ namespace Projeto_Academia
                  SELECT    
                     *
                  FROM
-                    tb_horario
+                    tb_horarios
                  WHERE
                     N_IDHORARIO="+vid;
 
@@ -70,10 +71,10 @@ namespace Projeto_Academia
             if (tb_idhorario.Text == "")
             {
                 vquery = "INSERT INTO tb_horarios (T_DSCHORARIO) VALUES ('" + mtb_dscHorario.Text + "')";
-            }
+            }   
             else
             {
-                vquery = "UPDATE tb_horarios  SET T_DSCHORARIO='" + mtb_dscHorario.Text + "' WHERE N_IDHORAIO="+tb_idhorario.Text;
+                vquery = "UPDATE tb_horarios  SET T_DSCHORARIO='" + mtb_dscHorario.Text + "' WHERE N_IDHORARIO="+tb_idhorario.Text;
             }
             Banco.dml(vquery);
             vquery = @"
@@ -83,7 +84,8 @@ namespace Projeto_Academia
              FROM
                 tb_horarios
              ORDER BY
-                T_DSCHORARIOS
+                N_IDHORARIO , 
+                T_DSCHORARIO
             ";
 
             dgv_horario.DataSource = Banco.dql(vquery);
@@ -98,10 +100,10 @@ namespace Projeto_Academia
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("Confirma Exclusão?", "Atenção" , MessageBoxButtons.YesNo);
+            DialogResult res = MessageBox.Show("Confirma Exclusão?", "Atenção" , MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if(res == DialogResult.Yes)
             {
-                string vquery = "DELETE FROM tb_horario WHERE N_IDHORARIO=" + tb_idhorario.Text;
+                string vquery = "DELETE FROM tb_horarios WHERE N_IDHORARIO=" + tb_idhorario.Text;
                 Banco.dml(vquery);
                 dgv_horario.Rows.Remove(dgv_horario.CurrentRow);
             }

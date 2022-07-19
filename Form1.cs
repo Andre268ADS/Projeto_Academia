@@ -17,8 +17,9 @@ namespace Projeto_Academia
             InitializeComponent();
             F_Login f_Login = new F_Login(this);
             f_Login.ShowDialog();
+
         }
-        private void AbreForm(int nivel, Form f)
+        private void abreForm(int nivel, Form f)
         {
             if (Globais.logado)
             {
@@ -33,7 +34,8 @@ namespace Projeto_Academia
             }
             else
             {
-                MessageBox.Show("É necessario ter um usuário logado");
+                MessageBox.Show("É necessario ter um usuário logado","Informação",
+                                MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -75,14 +77,14 @@ namespace Projeto_Academia
         private void novoUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             F_NovoUsuario f_NovoUsuario = new F_NovoUsuario();
-            AbreForm(1, f_NovoUsuario);
+            abreForm(1, f_NovoUsuario);
         }
 
         private void gestãoDeUsuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             F_GestaoUsuarios f_GestaoUsuarios = new F_GestaoUsuarios();
-            AbreForm(1, f_GestaoUsuarios);
+            abreForm(1, f_GestaoUsuarios);
         }
 
         private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,7 +107,19 @@ namespace Projeto_Academia
         private void horáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             F_Horarios f_Horarios = new F_Horarios();
-            AbreForm(2, f_Horarios);
+            abreForm(2, f_Horarios);
+        }
+
+        private void professoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GestaoProfessores f_GestaoProfessores = new F_GestaoProfessores();
+            abreForm(2, f_GestaoProfessores);
+        }
+
+        private void turmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GestaoTurmas f_GestaoTurmas = new F_GestaoTurmas();
+            abreForm(2, f_GestaoTurmas);
         }
     }
 }
