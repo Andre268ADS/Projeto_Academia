@@ -108,11 +108,23 @@
     <Compile Include="F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_NovoAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_NovoAluno.Designer.cs">
+      <DependentUpon>F_NovoAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_NovoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="F_NovoUsuario.Designer.cs">
       <DependentUpon>F_NovoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_SelecionarTurmas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_SelecionarTurmas.Designer.cs">
+      <DependentUpon>F_SelecionarTurmas.cs</DependentUpon>
     </Compile>
     <Compile Include="Globais.cs" />
     <Compile Include="Program.cs" />
@@ -137,8 +149,14 @@
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="F_NovoAluno.resx">
+      <DependentUpon>F_NovoAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="F_NovoUsuario.resx">
       <DependentUpon>F_NovoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_SelecionarTurmas.resx">
+      <DependentUpon>F_SelecionarTurmas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

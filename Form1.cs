@@ -29,7 +29,8 @@ namespace Projeto_Academia
                 }
                 else
                 {
-                    MessageBox.Show("Acesso não permitido");
+                    MessageBox.Show("Acesso não permitido", "Informação",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
@@ -65,12 +66,14 @@ namespace Projeto_Academia
                 }
                 else
                 {
-                    MessageBox.Show("Acesso não permitido");
+                    MessageBox.Show("Acesso não permitido", "Informação",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else
             {
-                MessageBox.Show("É necessario ter um usuário logado");
+                MessageBox.Show("É necessario ter um usuário logado", "Informação",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -89,14 +92,9 @@ namespace Projeto_Academia
 
         private void novoAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Globais.logado)
-            {//procedimentos padroes da janela
-               
-            }
-            else
-            {
-                MessageBox.Show("É necessario ter um usuário logado");
-            }
+            F_NovoAluno f_NovoAluno = new F_NovoAluno();
+            abreForm(1, f_NovoAluno);
+            
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

@@ -254,10 +254,49 @@ namespace Projeto_Academia
             Document doc = new Document(PageSize.A4);
             PdfWriter escritorPDF = PdfWriter.GetInstance(doc, arquivoPDF);
 
-            
-            string dados = "";
+            iTextSharp.text.Image logo  = iTextSharp.text.Image.GetInstance(Globais.caminho + @"\canada.png");
+            logo.ScaleToFit(140f, 120f);
+            logo.Alignment = Element.ALIGN_CENTER; // (outra opção de posição de imagem)
+            //logo.SetAbsolutePosition(100f, 700f);//x,-y (-y indica que é invertido)
 
-            Paragraph paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL,16,(int)System.Drawing.FontStyle.Bold));
+            string dados = "";
+            Paragraph paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 16, (int)System.Drawing.FontStyle.Bold));
+            paragrafo1.Alignment = Element.ALIGN_CENTER;
+            paragrafo1.Add("Relatório de Turmas \n\n");
+
+            Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 16, (int)System.Drawing.FontStyle.Bold));
+            paragrafo2.Alignment = Element.ALIGN_CENTER;
+            paragrafo2.Add("CFB Cursos - Curso de C#\n");
+
+            PdfPTable tabela = new PdfPTable(3); //(3 colunas)
+            tabela.DefaultCell.FixedHeight = 20;
+
+            tabela.AddCell("Id Turma");
+            tabela.AddCell("Turma");
+            tabela.AddCell("Horário");
+
+            DataTable dtTurmas = Banco.dql(vqueryDGV);
+            for (int i = 0; i <dtTurmas.Rows.Count; i++)
+            {
+                tabela.AddCell(dtTurmas.Rows[i].Field<Int64>("ID").ToString());
+                tabela.AddCell(dtTurmas.Rows[i].Field<string>("Turma"));
+                tabela.AddCell(dtTurmas.Rows[i].Field<string>("Horário"));
+            }
+
+            doc.Open();
+            doc.Add(logo);
+            doc.Add(paragrafo1);
+            doc.Add(tabela);
+            doc.Add(paragrafo2);
+            doc.Close();
+
+            DialogResult res = MessageBox.Show("Deseja Abrir o Relatorio?", "Relatório", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(res == DialogResult.Yes)
+            {
+                System.Diagnostics.Process.Start(Globais.caminho + @"\turmas.pdf");
+            }
+
+            /*Paragraph paragrafo1 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL,16,(int)System.Drawing.FontStyle.Bold));
             paragrafo1.Alignment = Element.ALIGN_CENTER;
             paragrafo1.Add("CFB Cursos\n");
             paragrafo1.Font = new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL,14,(int)System.Drawing.FontStyle.Italic);
@@ -268,15 +307,44 @@ namespace Projeto_Academia
 
 
             Paragraph paragrafo2 = new Paragraph(dados, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 16, (int)System.Drawing.FontStyle.Bold));
-            paragrafo1.Alignment = Element.ALIGN_CENTER;
-            paragrafo1.Add("System Development");
+            paragrafo2.Alignment = Element.ALIGN_CENTER;
+            paragrafo2.Add("System Development\n\n");
+
+            PdfPTable tabela = new PdfPTable(3); //(3 colunas)
+            tabela.DefaultCell.FixedHeight = 20;
+
+            PdfPCell celula1 = new PdfPCell();
+            celula1.Colspan = 3;//linha 1 mesclada
+            //celula.Rotation = 90;
+            celula1.AddElement(logo);
+            
+            tabela.AddCell(celula1);
+
+            tabela.AddCell("Código");
+            tabela.AddCell("Produto"); 
+            tabela.AddCell("Preço");
 
 
-            doc.Open();
-            doc.Add(paragrafo1); 
-            doc.Add(paragrafo2);
-            doc.Close();
+            tabela.AddCell("01");
+            tabela.AddCell("Mouse");
+            tabela.AddCell("R$25,00");
 
+
+            tabela.AddCell("02");
+            tabela.AddCell("Teclado");
+            tabela.AddCell("R$65,00");
+
+
+            PdfPCell celula2 = new PdfPCell (new Phrase ("Tabela de Preços"));
+            celula2.Rotation = 0;
+            celula2.Colspan = 3;//linha 1 mesclada
+            celula2.FixedHeight = 40;
+            celula2.HorizontalAlignment = Element.ALIGN_CENTER;
+            celula2.VerticalAlignment = Element.ALIGN_MIDDLE;
+            tabela.AddCell(celula2);
+            */
+
+          
 
         }
     }
