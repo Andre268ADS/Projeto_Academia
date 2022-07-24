@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_fechar = new System.Windows.Forms.Button();
             this.btn_imprimirTurma = new System.Windows.Forms.Button();
@@ -48,6 +48,7 @@
             this.tb_dscturma = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_vagas = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_maxAlunos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_turmas)).BeginInit();
@@ -197,14 +198,14 @@
             this.dgv_turmas.AllowUserToAddRows = false;
             this.dgv_turmas.AllowUserToDeleteRows = false;
             this.dgv_turmas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_turmas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_turmas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_turmas.EnableHeadersVisualStyles = false;
             this.dgv_turmas.Location = new System.Drawing.Point(3, 12);
@@ -253,6 +254,15 @@
             this.tb_vagas.TabIndex = 10;
             this.tb_vagas.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(395, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Nome Turma";
+            // 
             // F_GestaoTurmas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +271,7 @@
             this.Controls.Add(this.tb_vagas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_dscturma);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lb_novaturma);
             this.Controls.Add(this.dgv_turmas);
             this.Controls.Add(this.n_maxAlunos);
@@ -307,5 +318,6 @@
         private System.Windows.Forms.TextBox tb_dscturma;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_vagas;
+        private System.Windows.Forms.Label label2;
     }
 }
